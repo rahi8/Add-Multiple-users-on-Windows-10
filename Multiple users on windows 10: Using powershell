@@ -1,7 +1,8 @@
-$Password = Student617
+$Password = "Student617"
 $A = $password | ConvertTo-SecureString -AsPlainText -Force
-New-LocalUser "student125" -Password $A
-Add-LocalGroupMember -Group "Remote Desktop Users" -Member "student125"
+$name = "student149"
+New-LocalUser $name -Password $A -FullName $name -Description "Classes"-PasswordNeverExpires -UserMayNotChangePassword
+Add-LocalGroupMember -Group "Remote Desktop Users" -Member $name
 
 
 
