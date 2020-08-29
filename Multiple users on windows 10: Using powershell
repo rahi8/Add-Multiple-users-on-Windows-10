@@ -6,4 +6,5 @@ Add-LocalGroupMember -Group "Remote Desktop Users" -Member $name
 
 
 
-Add-LocalGroupMember -Group "Administrators" -Member "student125"
+Add-LocalGroupMember -Group "Administrators" -Member $name
+
