@@ -1,0 +1,21 @@
+NOtepad File
+
+name
+student1,
+student2,
+student3
+
+Save as 123.csv (On Desktop)
+Powershell > cd Desktop
+
+$a = import-csv .\123.csv
+foreach($test in $a)
+{
+$field1 = $test.name
+  
+$Password = "Password123@"
+$A = $password | ConvertTo-SecureString -AsPlainText -Force
+$name = $field1
+New-LocalUser $name -Password $A -FullName $name -Description "Classes"-PasswordNeverExpires -UserMayNotChangePassword
+Add-LocalGroupMember -Group "Remote Desktop Users" -Member $name
+}
